@@ -10,7 +10,7 @@ This repo should be forked as private and not used directly as described in [aws
 
 As default this repo take eu-central-1 region as example.
 
-File thant need to  be updated :
+Files that need to be updated :
 
 * application/$REGION/terraform.tfvars
 * operations/$REGION/terraform.tfvars
