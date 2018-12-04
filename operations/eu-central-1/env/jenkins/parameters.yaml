@@ -1,0 +1,6 @@
+gitUsername: ''
+gitApiToken: ''
+gitProviderUrl: 'https://CC.XX.ZZZ/bitbucket/'
+gitBitbucketServer: 'https://XX.CCVVV'
+defaultAdminPassword: 'qwerty'
+jxDomain: 'XXX.ZZZ.CCC'
