@@ -10,4 +10,7 @@ module "operations_iam" {
 
   k8s_cluster_name_postfix = "${var.k8s_cluster_name_postfix}"
   logs_not_resource        = "${var.logs_not_resource}"
+
+  auto_IAM_mode = "${var.auto_IAM_mode}"
+  auto_IAM_path = "${var.auto_IAM_path}"
 }

@@ -1,5 +1,9 @@
 application_aws_account_number = "210987654321" # AWS application account number (without hyphens)
 
+auto_IAM_mode = false # Create IAM Policies in AWS (default false)
+
+auto_IAM_path = "/" # IAM path for auto IAM mode uploaded policies
+
 azs = ["eu-central-1a", "eu-central-1b", "eu-central-1c"] # Availability Zones for the cluster (1 master per AZ will be deployed)
 
 environment_type = "test" # Type of environment (e.g. test, production)

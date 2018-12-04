@@ -28,3 +28,11 @@ variable "logs_not_resource" {
   default     = []
   type        = "list"
 }
+
+variable "auto_IAM_mode" {
+  description = "Create IAM Policies in AWS (default false)"
+}
+
+variable "auto_IAM_path" {
+  description = "IAM path for auto IAM mode uploaded policies"
+}

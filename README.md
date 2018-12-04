@@ -12,8 +12,8 @@ As default this repo take eu-central-1 region as example.
 
 File thant need to  be updated :
 
-application/$REGION/terraform.tfvars
-operations/$REGION/terraform.tfvars
-operations/$REGION/env/jenkins/parameters.yaml (configs for jx installation)
+* application/$REGION/terraform.tfvars
+* operations/$REGION/terraform.tfvars
+* operations/$REGION/env/jenkins/parameters.yaml (configs for jx installation)
 
 To setup on another region change directories name or copy as new region name and update config files accordingly
