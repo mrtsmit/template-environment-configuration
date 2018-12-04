@@ -12,6 +12,10 @@ variable "environment_type" {
   description = "Type of environment (e.g. test, production)"
 }
 
+variable "jenkins_iam_policy_names_prefix" {
+  description = "Prefix for policy names created (default /)r"
+}
+
 variable "jenkins_ec2_instance_type" {
   description = "Instance type for Core Infra Jenkins Master"
 }

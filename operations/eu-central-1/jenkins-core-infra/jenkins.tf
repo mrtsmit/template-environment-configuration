@@ -14,4 +14,6 @@ module "jenkins" {
   http_allowed_cidrs = "${var.jenkins_http_allowed_cidrs}"
 
   jenkins_config_repo_url = "${var.jenkins_config_repo_url}"
+
+  iam_policy_names_prefix = "${var.jenkins_iam_policy_names_prefix}"
 }

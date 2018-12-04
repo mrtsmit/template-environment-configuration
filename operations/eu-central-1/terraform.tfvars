@@ -18,6 +18,8 @@ jenkins_ec2_instance_type = "t3.medium" # Instance type for Core Infra Jenkins M
 
 jenkins_http_allowed_cidrs = ["10.0.0.0/8"] # CIDRs we allow http from (List)
 
+jenkins_iam_policy_names_prefix = "/" # Prefix for policy names created (default /)
+
 jenkins_ssh_allowed_cidrs = ["10.0.0.0/8"] # CIDRs we allow ssh from (List)
 
 jenkins_subnet_id = "subnet-ZXC" # ID of existing subnet where Jenkins will be deployed
