@@ -5,7 +5,7 @@ module "application_iam" {
   product_domain_name = "${var.product_domain_name}"
   environment_type    = "${var.environment_type}"
 
-  operation_aws_account_number   = "${var.operation_aws_account_number}"
+  operations_aws_account_number  = "${var.operations_aws_account_number}"
   application_aws_account_number = "${var.application_aws_account_number}"
 
   k8s_cluster_name_postfix = "${var.k8s_cluster_name_postfix}"
