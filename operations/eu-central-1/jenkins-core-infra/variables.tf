@@ -57,3 +57,11 @@ variable "jenkins_http_allowed_cidrs" {
 variable "jenkins_config_repo_url" {
   description = "Git repo url with Product Domain configuration (Fork of this repo.)"
 }
+
+variable "auto_IAM_mode" {
+  description = "Create IAM Policies in AWS"
+}
+
+variable "auto_IAM_path" {
+  description = "IAM path for auto IAM mode uploaded policies"
+}

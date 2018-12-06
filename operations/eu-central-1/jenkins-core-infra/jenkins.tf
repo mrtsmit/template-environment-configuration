@@ -19,4 +19,6 @@ module "jenkins" {
   jenkins_config_repo_url = "${var.jenkins_config_repo_url}"
 
   iam_policy_names_prefix = "${var.jenkins_iam_policy_names_prefix}"
+
+  auto_IAM_mode = "${var.auto_IAM_mode}"
 }
