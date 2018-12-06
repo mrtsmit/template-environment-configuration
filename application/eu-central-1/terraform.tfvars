@@ -31,9 +31,9 @@ k8s_nodes_iam_policies_arns = [
 
 k8s_private_subnets = ["subnet-XXXX", "subnet-ZZZZ", "subnet-YYYY"] # List of private subnets (matching AZs) where to deploy the cluster (required if existing VPC is used)
 
-logs_not_resource = [] # List of resources that log police will NotResource, empty least mean that Resource * is set
+logs_not_resource = [] # List of resources that log police will use for NotResource, empty means that Resource * is set
 
-operation_aws_account_number = "123456789012" # AWS operation account number (without hyphens)
+operations_aws_account_number = "123456789012" # AWS operations account number (without hyphens)
 
 product_domain_name = "demo" # Name of product domain, will be used to create other names
 

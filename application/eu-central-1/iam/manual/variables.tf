@@ -10,8 +10,8 @@ variable "environment_type" {
   description = "Type of environment (e.g. test, production)"
 }
 
-variable "operation_aws_account_number" {
-  description = "AWS operation account number (without hyphens)"
+variable "operations_aws_account_number" {
+  description = "AWS operations account number (without hyphens)"
 }
 
 variable "application_aws_account_number" {
@@ -24,13 +24,13 @@ variable "k8s_cluster_name_postfix" {
 }
 
 variable "logs_not_resource" {
-  description = "List of resources that log police will NotResource, empty least mean that Resource * is set"
+  description = "List of resources that log police will use for NotResource, empty means that Resource * is set"
   default     = []
   type        = "list"
 }
 
 variable "auto_IAM_mode" {
-  description = "Create IAM Policies in AWS (default false)"
+  description = "Create IAM Policies in AWS"
 }
 
 variable "auto_IAM_path" {

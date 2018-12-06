@@ -1,5 +1,5 @@
-module "operations_iam" {
-  source = "github.com/kentrikos/terraform-aws-iam-generator//operations"
+module "application_iam" {
+  source = "github.com/kentrikos/terraform-aws-iam-generator//application"
 
   region              = "${var.region}"
   product_domain_name = "${var.product_domain_name}"

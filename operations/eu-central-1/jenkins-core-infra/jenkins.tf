@@ -1,6 +1,9 @@
 module "jenkins" {
   source = "github.com/kentrikos/terraform-aws-bootstrap-jenkins"
 
+  operations_aws_account_number  = "${var.operations_aws_account_number}"
+  application_aws_account_number = "${var.application_aws_account_number}"
+
   product_domain_name = "${var.product_domain_name}"
   environment_type    = "${var.environment_type}"
   ec2_instance_type   = "${var.jenkins_ec2_instance_type}"

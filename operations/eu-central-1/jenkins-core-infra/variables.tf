@@ -4,6 +4,14 @@ variable "region" {
   description = "AWS region"
 }
 
+variable "operations_aws_account_number" {
+  description = "AWS operation account number (without hyphens)"
+}
+
+variable "application_aws_account_number" {
+  description = "AWS application account number (without hyphens)"
+}
+
 variable "product_domain_name" {
   description = "Name of product domain, will be used to create other names"
 }
