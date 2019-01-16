@@ -23,13 +23,40 @@ vpc_id = raw_input("Enter your VPC ID (must be pre-created): ")
 subnet1_id = raw_input("Enter your Subnet ID 1 (must be pre-created): ")
 subnet2_id = raw_input("Enter your Subnet ID 2 (must be pre-created): ")
 subnet3_id = raw_input("Enter your Subnet ID 3 (must be pre-created): ")
+jenkins_subnet_id = raw_input("Enter your Jenkins Subnet ID (must be pre-created): ")
+
+#parameters yaml for jenkins
+gitUsername = raw_input("Enter your git username: ")
+gitApiToken = raw_input("Enter your git API Token: ")
+gitProviderUrl = raw_input("Enter your git Provider URL: ")
+gitBitbucketServer = raw_input("Enter your git Bitbucket Server: ")
+jxDomainHostedZoneID = raw_input("JX Domain Hosted Zone: ")
+jxDomainAliasPrefix = raw_input("JX Domain Alias Prefix: ")
+
+TEMPLATE_FILE = "operations/" + region + "/terraform.tfvars.template"
+with open(TEMPLATE_FILE) as file_:
+    template = Template(file_.read())
+#add value from top section here if newly added    
+rendered_file = template.render(aws_account=aws_account,environment_type=environment_type,role_name=role_name,aws_opp_account=aws_opp_account,region=region,vpc_id=vpc_id,subnet1_id=subnet1_id,subnet2_id=subnet2_id,subnet3_id=subnet3_id,jenkins_subnet_id=jenkins_subnet_id)
+f = open("operations/" + region + "/terraform.tfvars" , "w")
+f.write(rendered_file)
+print(rendered_file)
 
 
-TEMPLATE_FILE = "tf_vars.template"
+TEMPLATE_FILE = "application/" + region + "/terraform.tfvars.template"
 with open(TEMPLATE_FILE) as file_:
     template = Template(file_.read())
 #add value from top section here if newly added    
 rendered_file = template.render(aws_account=aws_account,environment_type=environment_type,role_name=role_name,aws_opp_account=aws_opp_account,region=region,vpc_id=vpc_id,subnet1_id=subnet1_id,subnet2_id=subnet2_id,subnet3_id=subnet3_id)
-f = open("tf_vars", "w")
+f = open("application/" + region + "/terraform.tfvars" , "w")
+f.write(rendered_file)
+print(rendered_file)
+
+TEMPLATE_FILE = "operations/" + region + "/env/jenkins/parameters.yaml.template"
+with open(TEMPLATE_FILE) as file_:
+    template = Template(file_.read())
+#add value from top section here if newly added    
+rendered_file = template.render(gitUsername=gitUsername,gitApiToken=gitApiToken,gitProviderUrl=gitProviderUrl,gitBitbucketServer=gitBitbucketServer,jxDomainHostedZoneID=jxDomainHostedZoneID,jxDomainAliasPrefix=jxDomainAliasPrefix)
+f = open("operations/" + region + "/env/jenkins/parameters.yaml" , "w")
 f.write(rendered_file)
 print(rendered_file)

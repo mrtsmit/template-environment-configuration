@@ -1,12 +1,12 @@
-application_aws_account_number = "123456" # AWS application account number (without hyphens)
+application_aws_account_number = "{{aws_account}}" # AWS application account number (without hyphens)
 
 auto_IAM_mode = false # Create IAM Policies in AWS (default false)
 
 auto_IAM_path = "/" # IAM path for auto IAM mode uploaded policies
 
-azs = ["eu-central-1a", "eu-central-1b", "eu-central-1c"] # Availability Zones for the cluster (1 master per AZ will be deployed)
+azs = ["{{region}}a", "{{region}}b", "{{region}}c"] # Availability Zones for the cluster (1 master per AZ will be deployed)
 
-environment_type = "test" # Type of environment (e.g. test, production)
+environment_type = "{{environment_type}}" # Type of environment (e.g. test, production)
 
 http_proxy = "" # IP of corporate HTTP proxy
 
@@ -22,15 +22,15 @@ jenkins_iam_policy_names_prefix = "/" # Prefix for policy names created (default
 
 jenkins_ssh_allowed_cidrs = ["10.0.0.0/8"] # CIDRs we allow ssh from (List)
 
-jenkins_subnet_id = "subnet-45678" # ID of existing subnet where Jenkins will be deployed
+jenkins_subnet_id = "{{jenkins_subnet_id}}" # ID of existing subnet where Jenkins will be deployed
 
 k8s_cluster_name_postfix = "k8s.local" # Domain name of Kubernetes cluster (currently only k8s.local is supported)
 
 k8s_master_instance_type = "m4.large" # Instance type (size) for master nodes
 
 k8s_masters_iam_policies_arns = [
-  "arn:aws:iam:::policy/masters.demo-test-ops.k8s.local",
-  "arn:aws:iam:::policy/masters_extra.demo-test-ops.k8s.local",
+  "arn:aws:iam::{{operations_aws_account_number}}:policy/masters.demo-test-ops.k8s.local",
+  "arn:aws:iam::{{operations_aws_account_number}}:policy/masters_extra.demo-test-ops.k8s.local",
 ] # List of existing IAM policies that will be attached to instance profile for master nodes (EC2 instances)
 
 k8s_node_count = "3" # Number of worker nodes in Kubernetes cluster
@@ -38,18 +38,18 @@ k8s_node_count = "3" # Number of worker nodes in Kubernetes cluster
 k8s_node_instance_type = "m4.large" # Instance type (size) for worker nodes
 
 k8s_nodes_iam_policies_arns = [
-  "arn:aws:iam:::policy/nnodes.mpas-demo-ops.k8s.local",
-  "arn:aws:iam:::policy/AssumeKopsCrossAccount",
+  "arn:aws:iam::{{operations_aws_account_number}}:policy/nnodes.mpas-demo-ops.k8s.local",
+  "arn:aws:iam::{{operations_aws_account_number}}:policy/AssumeKopsCrossAccount",
 ] # List of existing IAM policies that will be attached to instance profile for worker nodes (EC2 instances)
 
-k8s_private_subnets = ["subnet-12345}", "subnet-23456", "subnet-34567"] # List of private subnets (matching AZs) where to deploy the cluster (required if existing VPC is used)
+k8s_private_subnets = ["{{subnet1_id}}}", "{{subnet2_id}}", "{{subnet3_id}}"] # List of private subnets (matching AZs) where to deploy the cluster (required if existing VPC is used)
 
 logs_not_resource = [] # List of resources that log police will use for NotResource, empty means that Resource * is set
 
-operations_aws_account_number = "" # AWS operations account number (without hyphens)
+operations_aws_account_number = "{{operations_aws_account_number}}" # AWS operations account number (without hyphens)
 
 product_domain_name = "demo" # Name of product domain, will be used to create other names
 
-region = "eu-central-1" # AWS region
+region = "{{region}}" # AWS region
 
-vpc_id = "vpc-12345" # ID of existing VPC (must be pre-created)
+vpc_id = "{{vpc_id}}" # ID of existing VPC (must be pre-created)

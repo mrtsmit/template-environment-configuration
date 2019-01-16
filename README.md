@@ -17,3 +17,15 @@ Files that need to be updated :
 * operations/$REGION/env/jenkins/parameters.yaml (configs for jx installation)
 
 To setup on another region change directories name or copy as new region name and update config files accordingly
+
+Experimental: 
+
+Pre-Req: 
+1. It will require the region folder to exist before hand  
+2. Install jinja2 on the machine python is being run on (pip install jinja2)
+
+TF Vars creator, by specifying the required variables it will auto fill values for those files. It can be run by using:
+
+python tf_vars_creator.py 
+
+then by following the prompts, it will autogenerate your files (PLEASE VALIDATE VARIABLES AFTER AND BEFORE EXECUTING)
