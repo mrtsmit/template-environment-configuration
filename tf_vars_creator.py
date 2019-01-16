@@ -14,17 +14,19 @@ vpc_id = input("Enter your VPC ID (must be pre-created): ")
 ## would require an import of the boto library or CLI
 # 
 # boto 
-# subnets = list(ec2.subnets.filter(Filters=filters))
-#
+# client = boto3.resource("ec2")
+# for vpc in client.vpcs.filter(id=vpc_id):
+#     for subnet in vpc.subnets.filters(Tag:Name=*public*):
+#         print(vpc, "all:", subnet)
 # CLI
 # filter by tag-key where it's public (needs to be in subnet name)
 # aws ec2 describe-subnets --filters Name=vpc-id,Values=<vpc_id> Name=tag:Name,Values=*public* 
 # loop through output to get the subnet ID's 
 
 
-subnet1_id = input("Enter your Subnet ID 1 (must be pre-created): ")
-subnet2_id = input("Enter your Subnet ID 2 (must be pre-created): ")
-subnet3_id = input("Enter your Subnet ID 3 (must be pre-created): ")
+subnet1_id = input("Enter your Subnet AZ1 (must be pre-created): ")
+subnet2_id = input("Enter your Subnet AZ2 (must be pre-created): ")
+subnet3_id = input("Enter your Subnet AZ3 (must be pre-created): ")
 jenkins_subnet_id = input("Enter your Jenkins Subnet ID (must be pre-created): ")
 
 #parameters yaml for jenkins
