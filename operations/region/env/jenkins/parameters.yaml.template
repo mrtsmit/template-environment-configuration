@@ -2,7 +2,7 @@
 gitUsername: '{{gitUsername}}'
 gitApiToken: '{{gitApiToken}}'
 gitProviderUrl: '{{gitProviderUrl}}'
-gitBitbucketServer: `{{gitBitbucketServer}}'
+gitBitbucketServer: '{{gitBitbucketServer}}'
 
 # Jenkins-x configuration:
 defaultAdminPassword: 'qwerty'
