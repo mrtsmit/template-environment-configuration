@@ -2,13 +2,13 @@ from jinja2 import Template #this may require a pip install jinja2
 from distutils.dir_util import copy_tree
 
 #replaces values into the templated file, to add a value add curly braces: ex - {{value}}
-aws_account = raw_input("Enter your AWS Account Number (without hypens): ")
-aws_opp_account = raw_input("Enter your AWS Operations Account Number (without hypens): ")
-environment_type = raw_input("Enter your Environment Type (e.g. test, production): ")
-role_name = raw_input("Enter your Role Name (ex - arn:aws:iam::<account inherited from above>:role/<<role_name>>): ")
-region = raw_input("Enter your AWS Region: ")
-product_domain_name = raw_input("Enter the Product Domain Name: ")
-vpc_id = raw_input("Enter your VPC ID (must be pre-created): ")
+aws_account = input("Enter your AWS Account Number (without hypens): ")
+aws_opp_account = input("Enter your AWS Operations Account Number (without hypens): ")
+environment_type = input("Enter your Environment Type (e.g. test, production): ")
+role_name = input("Enter your Role Name (ex - arn:aws:iam::<account inherited from above>:role/<<role_name>>): ")
+region = input("Enter your AWS Region: ")
+product_domain_name = input("Enter the Product Domain Name: ")
+vpc_id = input("Enter your VPC ID (must be pre-created): ")
 
 ## potentially calculate subnets using a vpc_id
 ## would require an import of the boto library or CLI
@@ -22,18 +22,18 @@ vpc_id = raw_input("Enter your VPC ID (must be pre-created): ")
 # loop through output to get the subnet ID's 
 
 
-subnet1_id = raw_input("Enter your Subnet ID 1 (must be pre-created): ")
-subnet2_id = raw_input("Enter your Subnet ID 2 (must be pre-created): ")
-subnet3_id = raw_input("Enter your Subnet ID 3 (must be pre-created): ")
-jenkins_subnet_id = raw_input("Enter your Jenkins Subnet ID (must be pre-created): ")
+subnet1_id = input("Enter your Subnet ID 1 (must be pre-created): ")
+subnet2_id = input("Enter your Subnet ID 2 (must be pre-created): ")
+subnet3_id = input("Enter your Subnet ID 3 (must be pre-created): ")
+jenkins_subnet_id = input("Enter your Jenkins Subnet ID (must be pre-created): ")
 
 #parameters yaml for jenkins
-gitUsername = raw_input("Enter your git username: ")
-gitApiToken = raw_input("Enter your git API Token: ")
-gitProviderUrl = raw_input("Enter your git Provider URL: ")
-gitBitbucketServer = raw_input("Enter your git Bitbucket Server: ")
-jxDomainHostedZoneID = raw_input("JX Domain Hosted Zone: ")
-jxDomainAliasPrefix = raw_input("JX Domain Alias Prefix: ")
+gitUsername = input("Enter your git username: ")
+gitApiToken = input("Enter your git API Token: ")
+gitProviderUrl = input("Enter your git Provider URL: ")
+gitBitbucketServer = input("Enter your git Bitbucket Server: ")
+jxDomainHostedZoneID = input("JX Domain Hosted Zone: ")
+jxDomainAliasPrefix = input("JX Domain Alias Prefix: ")
 
 # copy new folder structure
 fromDirectory = "operations/region"
