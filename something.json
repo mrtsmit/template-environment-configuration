@@ -1,0 +1,240 @@
+{
+    "Subnets": [
+        {
+            "AvailabilityZone": "us-east-1c",
+            "Tags": [
+                {
+                    "Value": "dev",
+                    "Key": "Environment"
+                },
+                {
+                    "Value": "shared",
+                    "Key": "kubernetes.io/cluster/test-eks-application-syjwvYW3"
+                },
+                {
+                    "Value": "fgam6-microservices",
+                    "Key": "Project"
+                },
+                {
+                    "Value": "true",
+                    "Key": "Terraform"
+                },
+                {
+                    "Value": "fgam6-microservices-dev-vpc-public-us-east-1c",
+                    "Key": "Name"
+                },
+                {
+                    "Value": "shared",
+                    "Key": "kubernetes.io/cluster/test-eks-KZg9LkOt"
+                }
+            ],
+            "AvailableIpAddressCount": 25,
+            "DefaultForAz": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "VpcId": "vpc-94438eee",
+            "State": "available",
+            "MapPublicIpOnLaunch": true,
+            "SubnetId": "subnet-d3388ab4",
+            "CidrBlock": "10.6.50.160/27",
+            "AssignIpv6AddressOnCreation": false
+        },
+        {
+            "AvailabilityZone": "us-east-1b",
+            "Tags": [
+                {
+                    "Value": "dev",
+                    "Key": "Environment"
+                },
+                {
+                    "Value": "shared",
+                    "Key": "kubernetes.io/cluster/k8s-dev-us-main.k8s.local"
+                },
+                {
+                    "Value": "fgam6-microservices",
+                    "Key": "Project"
+                },
+                {
+                    "Value": "true",
+                    "Key": "Terraform"
+                },
+                {
+                    "Value": "private",
+                    "Key": "Tier"
+                },
+                {
+                    "Value": "fgam6-microservices-dev-vpc-private-us-east-1b",
+                    "Key": "Name"
+                }
+            ],
+            "AvailableIpAddressCount": 20,
+            "DefaultForAz": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "VpcId": "vpc-94438eee",
+            "State": "available",
+            "MapPublicIpOnLaunch": false,
+            "SubnetId": "subnet-31be016d",
+            "CidrBlock": "10.6.50.32/27",
+            "AssignIpv6AddressOnCreation": false
+        },
+        {
+            "AvailabilityZone": "us-east-1c",
+            "Tags": [
+                {
+                    "Value": "dev",
+                    "Key": "Environment"
+                },
+                {
+                    "Value": "fgam6-microservices",
+                    "Key": "Project"
+                },
+                {
+                    "Value": "private",
+                    "Key": "Tier"
+                },
+                {
+                    "Value": "true",
+                    "Key": "Terraform"
+                },
+                {
+                    "Value": "fgam6-microservices-dev-vpc-private-us-east-1c",
+                    "Key": "Name"
+                },
+                {
+                    "Value": "shared",
+                    "Key": "kubernetes.io/cluster/k8s-dev-us-main.k8s.local"
+                }
+            ],
+            "AvailableIpAddressCount": 19,
+            "DefaultForAz": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "VpcId": "vpc-94438eee",
+            "State": "available",
+            "MapPublicIpOnLaunch": false,
+            "SubnetId": "subnet-e1348686",
+            "CidrBlock": "10.6.50.64/27",
+            "AssignIpv6AddressOnCreation": false
+        },
+        {
+            "AvailabilityZone": "us-east-1a",
+            "Tags": [
+                {
+                    "Value": "shared",
+                    "Key": "kubernetes.io/cluster/test-eks-application-syjwvYW3"
+                },
+                {
+                    "Value": "fgam6-microservices-dev-vpc-public-us-east-1a",
+                    "Key": "Name"
+                },
+                {
+                    "Value": "true",
+                    "Key": "Terraform"
+                },
+                {
+                    "Value": "shared",
+                    "Key": "kubernetes.io/cluster/test-eks-KZg9LkOt"
+                },
+                {
+                    "Value": "owned",
+                    "Key": "kubernetes.io/cluster/k8s-dev-us-main.k8s.local"
+                },
+                {
+                    "Value": "dev",
+                    "Key": "Environment"
+                },
+                {
+                    "Value": "fgam6-microservices",
+                    "Key": "Project"
+                }
+            ],
+            "AvailableIpAddressCount": 24,
+            "DefaultForAz": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "VpcId": "vpc-94438eee",
+            "State": "available",
+            "MapPublicIpOnLaunch": true,
+            "SubnetId": "subnet-03571549",
+            "CidrBlock": "10.6.50.96/27",
+            "AssignIpv6AddressOnCreation": false
+        },
+        {
+            "AvailabilityZone": "us-east-1a",
+            "Tags": [
+                {
+                    "Value": "fgam6-microservices",
+                    "Key": "Project"
+                },
+                {
+                    "Value": "private",
+                    "Key": "Tier"
+                },
+                {
+                    "Value": "true",
+                    "Key": "kubernetes.io/role/internal-elb"
+                },
+                {
+                    "Value": "dev",
+                    "Key": "Environment"
+                },
+                {
+                    "Value": "true",
+                    "Key": "Terraform"
+                },
+                {
+                    "Value": "fgam6-microservices-dev-vpc-private-us-east-1a",
+                    "Key": "Name"
+                },
+                {
+                    "Value": "shared",
+                    "Key": "kubernetes.io/cluster/k8s-dev-us-main.k8s.local"
+                }
+            ],
+            "AvailableIpAddressCount": 17,
+            "DefaultForAz": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "VpcId": "vpc-94438eee",
+            "State": "available",
+            "MapPublicIpOnLaunch": false,
+            "SubnetId": "subnet-c753118d",
+            "CidrBlock": "10.6.50.0/27",
+            "AssignIpv6AddressOnCreation": false
+        },
+        {
+            "AvailabilityZone": "us-east-1b",
+            "Tags": [
+                {
+                    "Value": "shared",
+                    "Key": "kubernetes.io/cluster/test-eks-KZg9LkOt"
+                },
+                {
+                    "Value": "fgam6-microservices-dev-vpc-public-us-east-1b",
+                    "Key": "Name"
+                },
+                {
+                    "Value": "true",
+                    "Key": "Terraform"
+                },
+                {
+                    "Value": "fgam6-microservices",
+                    "Key": "Project"
+                },
+                {
+                    "Value": "dev",
+                    "Key": "Environment"
+                },
+                {
+                    "Value": "shared",
+                    "Key": "kubernetes.io/cluster/test-eks-application-syjwvYW3"
+                }
+            ],
+            "AvailableIpAddressCount": 25,
+            "DefaultForAz": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "VpcId": "vpc-94438eee",
+            "State": "available",
+            "MapPublicIpOnLaunch": true,
+            "SubnetId": "subnet-b5c27de9",
+            "CidrBlock": "10.6.50.128/27",
+            "AssignIpv6AddressOnCreation": false
+        }
+    ]
+}
