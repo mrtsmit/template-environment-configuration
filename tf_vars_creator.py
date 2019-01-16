@@ -9,10 +9,16 @@ region = raw_input("Enter your AWS Region: ")
 vpc_id = raw_input("Enter your VPC ID (must be pre-created): ")
 
 ## potentially calculate subnets using a vpc_id
-## would require an import of the boto library or CLI 
+## would require an import of the boto library or CLI
+# 
+# boto 
 # subnets = list(ec2.subnets.filter(Filters=filters))
-# aws ec2 describe-subnets --filters Name=vpc-id,Values=<vpc_id> --profile cv-int-transit
-# loop through output to get the subnet ID's and filter by tag-key where it's public
+#
+# CLI
+# filter by tag-key where it's public (needs to be in subnet name)
+# aws ec2 describe-subnets --filters Name=vpc-id,Values=<vpc_id> Name=tag:Name,Values=*public* 
+# loop through output to get the subnet ID's 
+
 
 subnet1_id = raw_input("Enter your Subnet ID 1 (must be pre-created): ")
 subnet2_id = raw_input("Enter your Subnet ID 2 (must be pre-created): ")
