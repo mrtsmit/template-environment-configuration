@@ -29,8 +29,8 @@ k8s_cluster_name_postfix = "k8s.local" # Domain name of Kubernetes cluster (curr
 k8s_master_instance_type = "m4.large" # Instance type (size) for master nodes
 
 k8s_masters_iam_policies_arns = [
-  "arn:aws:iam::{{operations_aws_account_number}}:policy/masters.demo-test-ops.k8s.local",
-  "arn:aws:iam::{{operations_aws_account_number}}:policy/masters_extra.demo-test-ops.k8s.local",
+  "arn:aws:iam::{{operations_aws_account_number}}:policy/masters.{{product_domain_name}}.k8s.local",
+  "arn:aws:iam::{{operations_aws_account_number}}:policy/masters_extra.{{product_domain_name}}.k8s.local",
 ] # List of existing IAM policies that will be attached to instance profile for master nodes (EC2 instances)
 
 k8s_node_count = "3" # Number of worker nodes in Kubernetes cluster
@@ -38,7 +38,7 @@ k8s_node_count = "3" # Number of worker nodes in Kubernetes cluster
 k8s_node_instance_type = "m4.large" # Instance type (size) for worker nodes
 
 k8s_nodes_iam_policies_arns = [
-  "arn:aws:iam::{{operations_aws_account_number}}:policy/nnodes.mpas-demo-ops.k8s.local",
+  "arn:aws:iam::{{operations_aws_account_number}}:policy/nodes.{{product_domain_name}}.k8s.local",
   "arn:aws:iam::{{operations_aws_account_number}}:policy/AssumeKopsCrossAccount",
 ] # List of existing IAM policies that will be attached to instance profile for worker nodes (EC2 instances)
 
