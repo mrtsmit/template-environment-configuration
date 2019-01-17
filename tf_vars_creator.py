@@ -2,16 +2,19 @@ from jinja2 import Template #this may require a pip install jinja2
 from distutils.dir_util import copy_tree
 
 #replaces values into the templated file, to add a value add curly braces: ex - {{value}}
-aws_account = input("Enter your AWS Account Number (without hypens): ")
+aws_account = input("Enter your AWS Application Account Number (without hypens): ")
 aws_opp_account = input("Enter your AWS Operations Account Number (without hypens): ")
 environment_type = input("Enter your Environment Type (e.g. test, production): ")
 role_name = input("Enter your Role Name (ex - arn:aws:iam::<account inherited from above>:role/<<role_name>>): ")
 region = input("Enter your AWS Region: ")
 product_domain_name = input("Enter the Product Domain Name: ")
 jenkins_config_url = input ("Enter the Jenkins Config URL: ")
-http_proxy = input("Enter the HTTP Proxy: ")
-vpc_id = input("Enter your VPC ID (must be pre-created): ")
+http_proxy = input("Enter the HTTP Proxy (IP or host name only): ")
+vpc_id = input("Enter your Operations VPC ID (must be pre-created): ")
 
+#Jenkins-Core configuration
+private_hosted_zone_id = input("Enter your Operations Private hosted zone ID: ")
+private_hosted_zone_alias_jenkins = input("Enter your Jenkins domain alias: ")
 ## potentially calculate subnets using a vpc_id
 ## would require an import of the boto library or CLI
 # 

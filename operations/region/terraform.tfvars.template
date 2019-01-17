@@ -22,9 +22,9 @@ jenkins_iam_policy_names_prefix = "/" # Prefix for policy names created (default
 
 jenkins_ssh_allowed_cidrs = ["10.0.0.0/8"] # CIDRs we allow ssh from (List)
 
-jenkins_dns_domain_hosted_zone_ID = “{{jxDomainHostedZoneID}}” # R53 Hosted Zone ID for domain that will be used by Jenkins master
+jenkins_dns_domain_hosted_zone_ID = “{{private_hosted_zone_id}}” # R53 Hosted Zone ID for domain that will be used by Jenkins master
 
-jenkins_dns_hostname = “{{jxDomainAliasPrefix}}” # Local part of FQDN for Jenki
+jenkins_dns_hostname = “{{private_hosted_zone_alias_jenkins}}” # Local part of FQDN for Jenki
 
 jenkins_subnet_id = "{{jenkins_subnet_id}}" # ID of existing subnet where Jenkins will be deployed
 
