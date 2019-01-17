@@ -50,7 +50,7 @@ k8s_private_subnets = ["{{subnet1_id}}}", "{{subnet2_id}}", "{{subnet3_id}}"] # 
 
 logs_not_resource = [] # List of resources that log police will use for NotResource, empty means that Resource * is set
 
-operations_aws_account_number = "{{operations_aws_account_number}}" # AWS operations account number (without hyphens)
+operations_aws_account_number = "{{aws_opp_account}}" # AWS operations account number (without hyphens)
 
 product_domain_name = "{{product_domain_name}}" # Name of product domain, will be used to create other names
 
