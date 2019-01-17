@@ -22,9 +22,9 @@ jenkins_iam_policy_names_prefix = "/" # Prefix for policy names created (default
 
 jenkins_ssh_allowed_cidrs = ["10.0.0.0/8"] # CIDRs we allow ssh from (List)
 
-jenkins_dns_domain_hosted_zone_ID = “{{jxDomainHostedZoneID}}” # R53 Hosted Zone ID for domain that will be used by Jenkins master
+jenkins_dns_domain_hosted_zone_ID = "{{private_hosted_zone_id}}" # R53 Hosted Zone ID for domain that will be used by Jenkins master
 
-jenkins_dns_hostname = “{{jxDomainAliasPrefix}}” # Local part of FQDN for Jenki
+jenkins_dns_hostname = "{{private_hosted_zone_alias_jenkins}}" # Local part of FQDN for Jenki
 
 jenkins_subnet_id = "{{jenkins_subnet_id}}" # ID of existing subnet where Jenkins will be deployed
 
@@ -33,8 +33,8 @@ k8s_cluster_name_postfix = "k8s.local" # Domain name of Kubernetes cluster (curr
 k8s_master_instance_type = "m4.large" # Instance type (size) for master nodes
 
 k8s_masters_iam_policies_arns = [
-  "arn:aws:iam::{{operations_aws_account_number}}:policy/masters.{{product_domain_name}}.k8s.local",
-  "arn:aws:iam::{{operations_aws_account_number}}:policy/masters_extra.{{product_domain_name}}.k8s.local",
+  "arn:aws:iam::{{operations_aws_account_number}}:policy/masters.{{product_domain_name}}-{{environment_type}}-ops.k8s.local",
+  "arn:aws:iam::{{operations_aws_account_number}}:policy/masters_extra.{{product_domain_name}}-{{environment_type}}-ops.k8s.local",
 ] # List of existing IAM policies that will be attached to instance profile for master nodes (EC2 instances)
 
 k8s_node_count = "3" # Number of worker nodes in Kubernetes cluster
@@ -42,7 +42,7 @@ k8s_node_count = "3" # Number of worker nodes in Kubernetes cluster
 k8s_node_instance_type = "m4.large" # Instance type (size) for worker nodes
 
 k8s_nodes_iam_policies_arns = [
-  "arn:aws:iam::{{operations_aws_account_number}}:policy/nodes.{{product_domain_name}}.k8s.local",
+  "arn:aws:iam::{{operations_aws_account_number}}:policy/nodes.{{product_domain_name}}-{{environment_type}}-ops.k8s.local",
   "arn:aws:iam::{{operations_aws_account_number}}:policy/AssumeKopsCrossAccount",
 ] # List of existing IAM policies that will be attached to instance profile for worker nodes (EC2 instances)
 

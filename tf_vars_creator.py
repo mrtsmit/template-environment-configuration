@@ -2,16 +2,19 @@ from jinja2 import Template #this may require a pip install jinja2
 from distutils.dir_util import copy_tree
 
 #replaces values into the templated file, to add a value add curly braces: ex - {{value}}
-aws_account = input("Enter your AWS Account Number (without hypens): ")
+aws_account = input("Enter your AWS Application Account Number (without hypens): ")
 aws_opp_account = input("Enter your AWS Operations Account Number (without hypens): ")
 environment_type = input("Enter your Environment Type (e.g. test, production): ")
 role_name = input("Enter your Role Name (ex - arn:aws:iam::<account inherited from above>:role/<<role_name>>): ")
 region = input("Enter your AWS Region: ")
 product_domain_name = input("Enter the Product Domain Name: ")
 jenkins_config_url = input ("Enter the Jenkins Config URL: ")
-http_proxy = input("Enter the HTTP Proxy: ")
-vpc_id = input("Enter your VPC ID (must be pre-created): ")
+http_proxy = input("Enter the HTTP Proxy (IP or host name only): ")
+vpc_id = input("Enter your Operations VPC ID (must be pre-created): ")
 
+#Jenkins-Core configuration
+private_hosted_zone_id = input("Enter your Operations Private hosted zone ID: ")
+private_hosted_zone_alias_jenkins = input("Enter your Jenkins domain alias: ")
 ## potentially calculate subnets using a vpc_id
 ## would require an import of the boto library or CLI
 # 
@@ -52,7 +55,7 @@ TEMPLATE_FILE = "operations/region/terraform.tfvars.template"
 with open(TEMPLATE_FILE) as file_:
     template = Template(file_.read())
 #add value from top section here if newly added    
-rendered_file = template.render(aws_account=aws_account,environment_type=environment_type,role_name=role_name,aws_opp_account=aws_opp_account,region=region,vpc_id=vpc_id,subnet1_id=subnet1_id,subnet2_id=subnet2_id,subnet3_id=subnet3_id,jenkins_subnet_id=jenkins_subnet_id,product_domain_name=product_domain_name,jxDomainHostedZoneID=jxDomainHostedZoneID,jxDomainAliasPrefix=jxDomainAliasPrefix,http_proxy=http_proxy,jenkins_config_url=jenkins_config_url)
+rendered_file = template.render(aws_account=aws_account,environment_type=environment_type,role_name=role_name,aws_opp_account=aws_opp_account,region=region,vpc_id=vpc_id,subnet1_id=subnet1_id,subnet2_id=subnet2_id,subnet3_id=subnet3_id,jenkins_subnet_id=jenkins_subnet_id,product_domain_name=product_domain_name,jxDomainHostedZoneID=jxDomainHostedZoneID,jxDomainAliasPrefix=jxDomainAliasPrefix,http_proxy=http_proxy,jenkins_config_url=jenkins_config_url,private_hosted_zone_id=private_hosted_zone_id,private_hosted_zone_alias_jenkins=private_hosted_zone_alias_jenkins)
 f = open("operations/" + region + "/terraform.tfvars" , "w")
 f.write(rendered_file)
 print(rendered_file)
