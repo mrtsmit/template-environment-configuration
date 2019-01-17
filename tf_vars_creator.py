@@ -55,7 +55,7 @@ TEMPLATE_FILE = "operations/region/terraform.tfvars.template"
 with open(TEMPLATE_FILE) as file_:
     template = Template(file_.read())
 #add value from top section here if newly added    
-rendered_file = template.render(aws_account=aws_account,environment_type=environment_type,role_name=role_name,aws_opp_account=aws_opp_account,region=region,vpc_id=vpc_id,subnet1_id=subnet1_id,subnet2_id=subnet2_id,subnet3_id=subnet3_id,jenkins_subnet_id=jenkins_subnet_id,product_domain_name=product_domain_name,jxDomainHostedZoneID=jxDomainHostedZoneID,jxDomainAliasPrefix=jxDomainAliasPrefix,http_proxy=http_proxy,jenkins_config_url=jenkins_config_url)
+rendered_file = template.render(aws_account=aws_account,environment_type=environment_type,role_name=role_name,aws_opp_account=aws_opp_account,region=region,vpc_id=vpc_id,subnet1_id=subnet1_id,subnet2_id=subnet2_id,subnet3_id=subnet3_id,jenkins_subnet_id=jenkins_subnet_id,product_domain_name=product_domain_name,jxDomainHostedZoneID=jxDomainHostedZoneID,jxDomainAliasPrefix=jxDomainAliasPrefix,http_proxy=http_proxy,jenkins_config_url=jenkins_config_url,private_hosted_zone_id=private_hosted_zone_id,private_hosted_zone_alias_jenkins=private_hosted_zone_alias_jenkins)
 f = open("operations/" + region + "/terraform.tfvars" , "w")
 f.write(rendered_file)
 print(rendered_file)
