@@ -26,7 +26,7 @@ jenkins_dns_domain_hosted_zone_ID = "{{private_hosted_zone_id}}" # R53 Hosted Zo
 
 jenkins_dns_hostname = "{{private_hosted_zone_alias_jenkins}}" # Local part of FQDN for Jenki
 
-jenkins_subnet_id = "{{jenkins_subnet_id}}" # ID of existing subnet where Jenkins will be deployed
+jenkins_subnet_id = "{{subnet1_id}}" # ID of existing subnet where Jenkins will be deployed
 
 k8s_cluster_name_postfix = "k8s.local" # Domain name of Kubernetes cluster (currently only k8s.local is supported)
 
@@ -46,7 +46,7 @@ k8s_nodes_iam_policies_arns = [
   "arn:aws:iam::{{operations_aws_account_number}}:policy/AssumeKopsCrossAccount",
 ] # List of existing IAM policies that will be attached to instance profile for worker nodes (EC2 instances)
 
-k8s_private_subnets = ["{{subnet1_id}}}", "{{subnet2_id}}", "{{subnet3_id}}"] # List of private subnets (matching AZs) where to deploy the cluster (required if existing VPC is used)
+k8s_private_subnets = ["{{subnet1_id}}", "{{subnet2_id}}", "{{subnet3_id}}"] # List of private subnets (matching AZs) where to deploy the cluster (required if existing VPC is used)
 
 logs_not_resource = [] # List of resources that log police will use for NotResource, empty means that Resource * is set
 

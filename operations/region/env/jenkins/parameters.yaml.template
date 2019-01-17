@@ -9,6 +9,6 @@ defaultAdminPassword: 'qwerty'
 
 # DNS configuration:
 ## R53 Hosted Zone ID for domain that will be used by jenkins-x:
-jxDomainHostedZoneID: '{{jxDomainHostedZoneID}}'
+jxDomainHostedZoneID: '{{private_hosted_zone_id}}'
 ## Prefix (string) for wildcard alias that will be created (*.jxDomainAliasPrefix.DOMAIN)
 jxDomainAliasPrefix: '{{jxDomainAliasPrefix}}'
