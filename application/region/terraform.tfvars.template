@@ -17,8 +17,8 @@ iam_cross_account_role_arn = "arn:aws:iam::{{aws_account}}:role/{{role_name}}" #
 k8s_master_instance_type = "m4.large" # Instance type (size) for master nodes
 
 k8s_masters_iam_policies_arns = [
-  "arn:aws:iam::{{aws_account}}:policy/masters.{{product_domain_name}}.k8s.local",
-  "arn:aws:iam::{{aws_account}}:policy/masters_extra.{{product_domain_name}}.k8s.local",
+  "arn:aws:iam::{{aws_account}}:policy/masters.{{product_domain_name}}-{{environment_type}}.k8s.local",
+  "arn:aws:iam::{{aws_account}}:policy/masters_extra.{{product_domain_name}}-{{environment_type}}.k8s.local",
 ] # List of existing IAM policies that will be attached to instance profile for master nodes (EC2 instances)
 
 k8s_node_count = "3" # Number of worker nodes in Kubernetes cluster
@@ -26,7 +26,7 @@ k8s_node_count = "3" # Number of worker nodes in Kubernetes cluster
 k8s_node_instance_type = "m4.large" # Instance type (size) for worker nodes
 
 k8s_nodes_iam_policies_arns = [
-  "arn:aws:iam::{{aws_account}}:policy/nodes.{{product_domain_name}}.k8s.local",
+  "arn:aws:iam::{{aws_account}}:policy/nodes.{{product_domain_name}}-{{environment_type}}.k8s.local",
 ] # List of existing IAM policies that will be attached to instance profile for worker nodes (EC2 instances)
 
 k8s_private_subnets = ["{{subnet1_id}}}", "{{subnet2_id}}", "{{subnet3_id}}"] # List of private subnets (matching AZs) where to deploy the cluster (required if existing VPC is used)
