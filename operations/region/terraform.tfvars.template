@@ -8,11 +8,11 @@ azs = ["{{region}}a", "{{region}}b", "{{region}}c"] # Availability Zones for the
 
 environment_type = "{{environment_type}}" # Type of environment (e.g. test, production)
 
-http_proxy = "" # IP of corporate HTTP proxy
+http_proxy = "{{http_proxy}}" # IP of corporate HTTP proxy
 
 http_proxy_port = 8080 # HTTP proxy port to use for access to internet. This is required to install packages on instances deployed in ops AWS accounts.
 
-jenkins_config_repo_url = "ssh://git@github.com:kentrikos/product-domain-generic" # Git repo url with Product Domain configuration (Fork of this repo.)
+jenkins_config_repo_url = "{{jenkins_config_url}}" # Git repo url with Product Domain configuration (Fork of this repo.)
 
 jenkins_ec2_instance_type = "t3.medium" # Instance type for Core Infra Jenkins Master
 

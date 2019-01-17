@@ -8,7 +8,7 @@ azs = ["{{region}}a", "{{region}}b", "{{region}}c"] # Availability Zones for the
 
 environment_type = "{{environment_type}}" # Type of environment (e.g. test, production)
 
-http_proxy = "" # IP of corporate HTTP proxy
+http_proxy = "{{http_proxy}}" # IP of corporate HTTP proxy
 
 http_proxy_port = 8080 # HTTP proxy port to use for access to internet. This is required to install packages on instances deployed in ops AWS accounts.
 
