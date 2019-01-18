@@ -1,0 +1,14 @@
+# GIT repositories configuration:
+gitUsername: 'qtb8117'
+gitApiToken: 'MzA3NDgzMDE4NTg5Orsb5dUvyPAkrFtsfGSdMlgI3jaq'
+gitProviderUrl: 'https://atc.bmwgroup.net/bitbucket/'
+gitBitbucketServer: 'https://git.bmwgroup.net:7999'
+
+# Jenkins-x configuration:
+defaultAdminPassword: 'qwerty'
+
+# DNS configuration:
+## R53 Hosted Zone ID for domain that will be used by jenkins-x:
+jxDomainHostedZoneID: 'Z2MGR6V51SQEDS'
+## Prefix (string) for wildcard alias that will be created (*.jxDomainAliasPrefix.DOMAIN)
+jxDomainAliasPrefix: 'jx-mrt9'

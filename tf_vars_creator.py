@@ -2,35 +2,35 @@ from jinja2 import Template #this may require a pip install jinja2
 from distutils.dir_util import copy_tree
 
 #DEFAULT VALUES
-default_aws_account = '1234567890'
-default_opp_account = '0987654321'
-default_environment_type = 'test'
-default_role_name = 'CloneRole'
+default_aws_account = '595052274509'
+default_opp_account = '090011926616'
+default_environment_type = 'dev'
+#default_role_name = 'KopsCrossAccount'
 default_region = 'us-east-1'
-default_product_domain_name = 'demo'
-default_jenkins_config_url = 'https://jenkins.com'
-default_http_proxy = "https://proxy.com"
-default_vpc_id = "vpc-123456"
-default_subnet1_id = "subnet-12345"
-default_subnet2_id = "subnet-23456"
-default_subnet3_id = "subnet-34567"
-default_private_hosted_zone_id = "AAAAAAAAA"
+default_product_domain_name = 'mrt9'
+default_jenkins_config_url = 'ssh://git@git.bmwgroup.net:7999/~qtb8117/mrt-environment-config.git'
+default_http_proxy = "http://10.81.6.5"
+default_vpc_id = "vpc-628b8b19"
+default_subnet1_id = "subnet-2fad3d65"
+default_subnet2_id = "subnet-50804c0c"
+default_subnet3_id = "subnet-c819d3af"
+default_private_hosted_zone_id = "Z2MGR6V51SQEDS"
 default_private_hosted_zone_alias_jenkins = "Jenkins"
-default_jxDomainAliasPrefix = "JX"
-default_gitBitbucketServer = "https://bitbucket.com"
-default_gitProviderUrl = "https://github.com"
-default_gitApiToken = "jf982j3498fj349j"
-default_gitUsername = "gitman"
+default_jxDomainAliasPrefix = "jx-mrt9"
+default_gitBitbucketServer = "https://git.bmwgroup.net:7999"
+default_gitProviderUrl = "https://atc.bmwgroup.net/bitbucket/"
+default_gitApiToken = "MzA3NDgzMDE4NTg5Orsb5dUvyPAkrFtsfGSdMlgI3jaq"
+default_gitUsername = "qtb8117"
 
 
 #replaces values into the templated file, to add a value add curly braces: ex - {{value}}
 aws_account = input("Enter your AWS Application Account Number (without hypens) -- default - " + default_aws_account +": ") or default_aws_account
 aws_opp_account = input("Enter your AWS Operations Account Number (without hypens) -- default - " + default_opp_account +": ") or default_opp_account
 environment_type = input("Enter your Environment Type (e.g. test, production) -- default - " + default_environment_type +": ") or default_environment_type
-role_name = input("Enter your Role Name (ex - arn:aws:iam::<account inherited from above>:role/<<role_name>>) -- default - " + default_role_name +": ") or default_role_name
+#role_name = input("KopsCrossAccount is hardcoded (ex - arn:aws:iam::<account inherited from above>:role/<<role_name>>) -- default - " + default_role_name +": ") or default_role_name
 region = input("Enter your AWS Region -- default - " + default_region +": ") or default_region
 product_domain_name = input("Enter the Product Domain Name -- default - " + default_product_domain_name +": ") or default_product_domain_name
-jenkins_config_url = input ("Enter the Jenkins Config URL -- default - " + default_jenkins_config_url +": ") or default_jenkins_config_url
+jenkins_config_url = input ("Enter your clone of the 'Environment-Configuration' -- default - " + default_jenkins_config_url +": ") or default_jenkins_config_url
 http_proxy = input("Enter the HTTP Proxy (IP or host name only) -- default - " + default_http_proxy +": ") or default_http_proxy
 vpc_id = input("Enter your Operations VPC ID (must be pre-created) -- default - " + default_vpc_id +": ") or default_vpc_id
 
@@ -77,7 +77,7 @@ TEMPLATE_FILE = "operations/region/terraform.tfvars.template"
 with open(TEMPLATE_FILE) as file_:
     template = Template(file_.read())
 #add value from top section here if newly added    
-rendered_file = template.render(aws_account=aws_account,environment_type=environment_type,role_name=role_name,aws_opp_account=aws_opp_account,region=region,vpc_id=vpc_id,subnet1_id=subnet1_id,subnet2_id=subnet2_id,subnet3_id=subnet3_id,product_domain_name=product_domain_name,jxDomainAliasPrefix=jxDomainAliasPrefix,http_proxy=http_proxy,jenkins_config_url=jenkins_config_url,private_hosted_zone_id=private_hosted_zone_id,private_hosted_zone_alias_jenkins=private_hosted_zone_alias_jenkins)
+rendered_file = template.render(aws_account=aws_account,environment_type=environment_type,aws_opp_account=aws_opp_account,region=region,vpc_id=vpc_id,subnet1_id=subnet1_id,subnet2_id=subnet2_id,subnet3_id=subnet3_id,product_domain_name=product_domain_name,jxDomainAliasPrefix=jxDomainAliasPrefix,http_proxy=http_proxy,jenkins_config_url=jenkins_config_url,private_hosted_zone_id=private_hosted_zone_id,private_hosted_zone_alias_jenkins=private_hosted_zone_alias_jenkins)
 f = open("operations/" + region + "/terraform.tfvars" , "w")
 f.write(rendered_file)
 print(rendered_file)
@@ -87,7 +87,7 @@ TEMPLATE_FILE = "application/" + region + "/terraform.tfvars.template"
 with open(TEMPLATE_FILE) as file_:
     template = Template(file_.read())
 #add value from top section here if newly added    
-rendered_file = template.render(aws_account=aws_account,environment_type=environment_type,role_name=role_name,aws_opp_account=aws_opp_account,region=region,vpc_id=vpc_id,subnet1_id=subnet1_id,subnet2_id=subnet2_id,subnet3_id=subnet3_id,product_domain_name=product_domain_name,http_proxy=http_proxy)
+rendered_file = template.render(aws_account=aws_account,environment_type=environment_type,aws_opp_account=aws_opp_account,region=region,vpc_id=vpc_id,subnet1_id=subnet1_id,subnet2_id=subnet2_id,subnet3_id=subnet3_id,product_domain_name=product_domain_name,http_proxy=http_proxy)
 f = open("application/" + region + "/terraform.tfvars" , "w")
 f.write(rendered_file)
 print(rendered_file)
