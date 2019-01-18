@@ -12,7 +12,7 @@ http_proxy = "{{http_proxy}}" # IP of corporate HTTP proxy
 
 http_proxy_port = 8080 # HTTP proxy port to use for access to internet. This is required to install packages on instances deployed in ops AWS accounts.
 
-iam_cross_account_role_arn = "arn:aws:iam::{{aws_account}}:role/KopsCrossAccount" # Cross-account role to assume before deploying the cluster
+iam_cross_account_role_arn = "arn:aws:iam::{{aws_account}}:role/AssumeKopsCrossAccount" # Cross-account role to assume before deploying the cluster
 
 k8s_master_instance_type = "m4.large" # Instance type (size) for master nodes
 

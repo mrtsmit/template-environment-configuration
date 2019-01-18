@@ -5,7 +5,7 @@ from distutils.dir_util import copy_tree
 default_aws_account = '1234567890'
 default_opp_account = '0987654321'
 default_environment_type = 'test'
-default_role_name = 'CloneRole'
+default_role_name = 'AssumeKopsCrossAccount'
 default_region = 'us-east-1'
 default_product_domain_name = 'demo'
 default_jenkins_config_url = 'https://jenkins.com'
