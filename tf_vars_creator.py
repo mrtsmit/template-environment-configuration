@@ -2,25 +2,25 @@ from jinja2 import Template #this may require a pip install jinja2
 from distutils.dir_util import copy_tree
 
 #DEFAULT VALUES
-default_aws_account = '595052274509'
-default_opp_account = '090011926616'
-default_environment_type = 'dev'
-#default_role_name = 'KopsCrossAccount'
+default_aws_account = '1234567890'
+default_opp_account = '0987654321'
+default_environment_type = 'test'
+default_role_name = 'CloneRole'
 default_region = 'us-east-1'
-default_product_domain_name = 'mrt9'
-default_jenkins_config_url = 'ssh://git@git.bmwgroup.net:7999/~qtb8117/mrt-environment-config.git'
-default_http_proxy = "http://10.81.6.5"
-default_vpc_id = "vpc-628b8b19"
-default_subnet1_id = "subnet-2fad3d65"
-default_subnet2_id = "subnet-50804c0c"
-default_subnet3_id = "subnet-c819d3af"
-default_private_hosted_zone_id = "Z2MGR6V51SQEDS"
+default_product_domain_name = 'demo'
+default_jenkins_config_url = 'https://jenkins.com'
+default_http_proxy = "https://proxy.com"
+default_vpc_id = "vpc-123456"
+default_subnet1_id = "subnet-12345"
+default_subnet2_id = "subnet-23456"
+default_subnet3_id = "subnet-34567"
+default_private_hosted_zone_id = "AAAAAAAAA"
 default_private_hosted_zone_alias_jenkins = "Jenkins"
-default_jxDomainAliasPrefix = "jx-mrt9"
-default_gitBitbucketServer = "https://git.bmwgroup.net:7999"
-default_gitProviderUrl = "https://atc.bmwgroup.net/bitbucket/"
-default_gitApiToken = "MzA3NDgzMDE4NTg5Orsb5dUvyPAkrFtsfGSdMlgI3jaq"
-default_gitUsername = "qtb8117"
+default_jxDomainAliasPrefix = "JX"
+default_gitBitbucketServer = "https://bitbucket.com"
+default_gitProviderUrl = "https://github.com"
+default_gitApiToken = "jf982j3498fj349j"
+default_gitUsername = "gitman"
 
 
 #replaces values into the templated file, to add a value add curly braces: ex - {{value}}
